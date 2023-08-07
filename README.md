@@ -1,14 +1,34 @@
 <h1>Traffic-Monitoring-System</h1>
-This is my B.Tech. final year project on a Traffic Monitoring System using Python-OpenCV and YOLOv8. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. I'm currently working on this project.
 
-The system will have the following features:
 
-* Real-time vehicle detection and counting.
-* Vehicle Speed Detection.
-* Detection of a specific vehicle for violating the speed limit.
-* Traffic Monitoring.
 
-* Screenshots:
+* <strong>Traffic Monitoring System using Python-OpenCV and YOLOv8:</strong><br>
+This is my B.Tech. final year project on a Traffic Monitoring System using Python-OpenCV and YOLOv8. I'm currently working on this project.
+
+* Technically speaking, YOLOv8 is a group of convolutional neural network models created and trained using the PyTorch framework. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. YOLOv8 is the latest version of the YOLO (You Only Look Once) AI models developed by Ultralytics.
+
+*	I have used YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. But I will also train the YOLOv8 model on a custom dataset.
+
+# Technologies:
+
+*	Programming Language: Python.
+
+*	Platform: Anaconda (Python Distribution), Google Colab Python3 Runtime Engine & Visual Studio Code IDE.
+
+* Libraries: Pandas, NumPy, Python-OpenCV & Ultralytics
+
+# The system will have the following features:
+
+•	Real-time vehicle detection and counting.
+
+•	Vehicle Speed Detection.
+
+•	Detection of a specific vehicle for violating the speed limit.
+
+•	Traffic Monitoring.
+
+
+# Screenshots:
 
 ![Screenshot (1208)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/dc1257cb-132b-4f98-b63f-f4c4b99d4a76)
 
