@@ -9,7 +9,7 @@ This is my B.Tech. final year project on a Traffic Monitoring System using Pytho
 
 *	I have used YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. But I will also train the YOLOv8 model on a custom dataset.
 
-# Technologies:
+<h2>Technologies:</h2>
 
 *	Programming Language: Python.
 
@@ -17,7 +17,7 @@ This is my B.Tech. final year project on a Traffic Monitoring System using Pytho
 
 * Libraries: Pandas, NumPy, Python-OpenCV & Ultralytics
 
-# The system will have the following features:
+<h2>The system will have the following features:</h2>
 
 •	Real-time vehicle detection and counting.
 
@@ -28,7 +28,7 @@ This is my B.Tech. final year project on a Traffic Monitoring System using Pytho
 •	Traffic Monitoring.
 
 
-# Screenshots:
+<h2>Screenshots:</h2>
 
 ![Screenshot (1208)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/dc1257cb-132b-4f98-b63f-f4c4b99d4a76)
 
