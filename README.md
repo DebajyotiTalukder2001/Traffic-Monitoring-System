@@ -27,9 +27,34 @@
 •	Traffic Monitoring.
 
 
+
 <h2>Screenshots:</h2>
 
-![Screenshot (1232)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/6a138542-b85e-4e89-9c75-61622162f055)
+![Screenshot (1237)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/604deb8b-3426-4383-ba10-ed28d937b2be)
+
+
+![Screenshot (1238)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d750fcc4-fb3e-4b51-bbd2-47bf9af01ba5)
+
+
+![Screenshot (1242)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/22e73639-0bc3-4200-a5cd-c272d9fe461c)
+
+
+![Screenshot (1240)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/34434ffb-c7db-4713-958d-14c5dde18e0f)
+
+![Screenshot (1239)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/71e74f9b-5bba-4ec4-bc7a-4a0f158b1153)
+
+![Screenshot (1233)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a42c9fcc-916b-4ef9-b70f-14b83d6df26b)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
