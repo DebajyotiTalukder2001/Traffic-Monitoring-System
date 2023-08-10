@@ -34,13 +34,6 @@
 
 
 
-
-![Screenshot (1275)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/f56d0548-70bf-419d-bc25-7e06a81449cc)
-
-
-
-
-
 ![Screenshot (1279)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a23485c7-1b4e-4602-9176-fd62b7423dd3)
 
 
@@ -61,8 +54,6 @@
 ![Screenshot (1294)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b1b0c0da-b1af-4582-a9d1-21c26dd3aa42)
 
 
-
-![Screenshot (1301)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/c0c7972d-b430-4f7f-87d5-141ec1c1b13f)
 
 
 
