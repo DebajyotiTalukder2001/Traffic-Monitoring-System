@@ -1,6 +1,7 @@
-#/////////////////////////////Tracker Module/////////////////////////////////////////////////////////////////////////////\
+# /////////////////////////////Tracker Module/////////////////////////////////////////////////////////////////////////////\
 
 import math
+
 
 class Tracker:
     def __init__(self):
@@ -9,7 +10,6 @@ class Tracker:
         # Keep the count of the IDs
         # each time a new object id detected, the count will increase by one
         self.id_count = 0
-
 
     def update(self, objects_rect):
         # Objects boxes and ids
@@ -49,5 +49,5 @@ class Tracker:
         # Update dictionary with IDs not used removed
         self.center_points = new_center_points.copy()
         return objects_bbs_ids
-    
+
 # /////////////////////////////Tracker Module/////////////////////////////////////////////////////////////////////////////
