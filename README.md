@@ -30,20 +30,44 @@
 
 <h2>Screenshots:</h2>
 
-![Screenshot (1237)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/604deb8b-3426-4383-ba10-ed28d937b2be)
+![Screenshot (1274)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/75a3a321-79f5-4ed7-87c5-5b1a45470298)
 
 
-![Screenshot (1238)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d750fcc4-fb3e-4b51-bbd2-47bf9af01ba5)
 
 
-![Screenshot (1242)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/22e73639-0bc3-4200-a5cd-c272d9fe461c)
+![Screenshot (1275)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/f56d0548-70bf-419d-bc25-7e06a81449cc)
 
 
-![Screenshot (1240)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/34434ffb-c7db-4713-958d-14c5dde18e0f)
 
-![Screenshot (1239)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/71e74f9b-5bba-4ec4-bc7a-4a0f158b1153)
 
-![Screenshot (1233)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a42c9fcc-916b-4ef9-b70f-14b83d6df26b)
+
+![Screenshot (1279)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a23485c7-1b4e-4602-9176-fd62b7423dd3)
+
+
+![Screenshot (1272)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/2d36c456-c31f-4010-87d5-868417e2423b)
+
+
+
+![Screenshot (1281)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/339bf8bf-ba55-4b2c-be69-ad33ae803ea0)
+
+
+![Screenshot (1286)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/3ae60b16-f27d-4254-ac2d-dde17804e77b)
+
+
+![Screenshot (1287)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/ba7bc542-5786-46ce-bc36-70fba4b8918f)
+
+
+
+![Screenshot (1294)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b1b0c0da-b1af-4582-a9d1-21c26dd3aa42)
+
+
+
+![Screenshot (1301)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/c0c7972d-b430-4f7f-87d5-141ec1c1b13f)
+
+
+
+
+
 
 
 
