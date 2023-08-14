@@ -20,11 +20,13 @@
 
 •	Real-time vehicle detection and counting.
 
+•	Vehicle Tracking.
+
 •	Vehicle Speed Detection.
 
 •	Detection of a specific vehicle for violating the speed limit.
 
-•	Traffic Monitoring.
+
 
 
 
