@@ -18,13 +18,13 @@
 
 <h2>The system will have the following features:</h2>
 
-•	Real-time vehicle detection and counting.
+•	Real-time Vehicle Detection and Counting.
 
 •	Vehicle Tracking.
 
 •	Vehicle Speed Detection.
 
-•	Detection of a specific vehicle for violating the speed limit.
+•	Detection of a Specific Vehicle for Violating the Speed Limit.
 
 
 
