@@ -6,7 +6,7 @@
 
 * Technically speaking, YOLOv8 is a group of convolutional neural network models created and trained using the PyTorch framework. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. YOLOv8 is the latest version of the YOLO (You Only Look Once) AI models developed by Ultralytics.
 
-*	I have used YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. But I will also train the YOLOv8 model on a custom dataset.
+*	I have used YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. Apart from that, I have also used a custom dataset to train the model.
 
 <h2>Technologies:</h2>
 
