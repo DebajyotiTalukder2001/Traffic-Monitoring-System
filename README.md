@@ -2,7 +2,7 @@
 
 
 <strong>Traffic Monitoring System using Python-OpenCV and YOLOv8:</strong><br>
-* This is my B.Tech. final year project on a Traffic Monitoring System using Python-OpenCV and YOLOv8. I'm currently working on this project.
+* This is my B.Tech. final year project on a Traffic Monitoring System using Python-OpenCV and YOLOv8.
 
 * Technically speaking, YOLOv8 is a group of convolutional neural network models created and trained using the PyTorch framework. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. YOLOv8 is the latest version of the YOLO (You Only Look Once) AI models developed by Ultralytics.
 
@@ -28,7 +28,7 @@
 
 <h2>Documentation</h2>
 
-* Documentation Link (In Progress): [Click Here](https://drive.google.com/drive/folders/1o_dnP3Hs1WSbIQcwozzGhLoHEcJdLK1r)
+* Documentation Link: [Click Here](https://drive.google.com/drive/folders/1o_dnP3Hs1WSbIQcwozzGhLoHEcJdLK1r)
 
 <h2>Screenshots:</h2>
 
