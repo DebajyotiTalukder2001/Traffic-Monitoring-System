@@ -16,7 +16,7 @@
 
 * Libraries: Pandas, NumPy, Python-OpenCV & Ultralytics
 
-<h2>The system will have the following features:</h2>
+<h2>The system have the following features:</h2>
 
 •	Real-time Vehicle Detection and Counting.
 
@@ -29,6 +29,10 @@
 <h2>Documentation</h2>
 
 * Documentation Link: [Click Here](https://drive.google.com/drive/folders/1o_dnP3Hs1WSbIQcwozzGhLoHEcJdLK1r)
+
+<h2>Demo Video</h2>
+
+* Demo Video Link: [Click Here](https://drive.google.com/file/d/1P8E7tU6OgGlr631fvizgvhH2RL7MIu-U/view?usp=sharing)
 
 <h2>Screenshots:</h2>
 
