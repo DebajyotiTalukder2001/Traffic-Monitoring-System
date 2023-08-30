@@ -83,7 +83,7 @@ while True:
         c = class_list[d]
         if 'car' in c:
             list.append([x1, y1, x2, y2])
-        else:
+        elif 'truck' in c:
             list.append([x1, y1, x2, y2])
 
     #This line calls the update() method of the Tracker object. 
