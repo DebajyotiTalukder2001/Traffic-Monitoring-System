@@ -10,7 +10,7 @@
 Leveraging the previous YOLO versions, the YOLOv8 model is faster and more accurate while providing a unified framework for training models for performing Object Detection, Instance Segmentation, and
 Image Classification.
 
-<h2>Models Available in YOLOv8</h2>
+<h2>Models Available in YOLOv8:</h2>
 There are five models in each category of YOLOv8 models for detection, segmentation, and classification. YOLOv8 Nano is the fastest and smallest, while YOLOv8 Extra Large (YOLOv8x) is the most accurate yet the slowest among them.
 YOLOv8 comes bundled with the following pre-trained models:
 
