@@ -18,7 +18,7 @@ YOLOv8 comes bundled with the following pre-trained models:
 * Instance segmentation checkpoints trained on the COCO segmentation dataset with an image resolution of 640.
 * Image classification models pretrained on the ImageNet dataset with an image resolution of 224.
 
-<h3> ## I have used the YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. ## </h3>
+<h3> ## I have used the YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. </h3>
 
 <h2>Technologies:</h2>
 
