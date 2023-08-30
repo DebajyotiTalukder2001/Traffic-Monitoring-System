@@ -78,17 +78,36 @@ YOLOv8 comes bundled with the following pre-trained models:
 <h3>Sample-2:</h3>
 
 
+![Screenshot (1355)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/f58df0e1-48a6-4b7a-8693-32aa7ad90d76)
 
 
 
+![Screenshot (1356)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/68af63a8-d1ba-4e04-a223-60680a294e14)
+
+![Screenshot (1359)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/9d8d3bdd-5cff-43e3-9967-66af9ee3f7db)
 
 
 
+![Screenshot (1361)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/cc1fd1c9-8a84-4e8e-8c77-07fba9bec672)
+
+![Screenshot (1364)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/1dfb761e-7134-4b4c-bb14-2b63de91f016)
+
+
+<h3>Sample-3:</h3>
+
+![Screenshot (1367)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b5809880-5d1a-4d2e-87d6-2bc4c0613677)
+
+![Screenshot (1368)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/9e474242-550a-43f6-b265-5b383e1b2e2c)
 
 
 
+![Screenshot (1371)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/5c842562-044d-4808-a6a1-0736ee704766)
 
+![Screenshot (1373)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/62250e42-0f94-467c-a9c5-3d86a1ad28ee)
 
+![Screenshot (1374)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a7ebb184-0245-4c85-84b6-d879be158e47)
+
+![Screenshot (1377)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d2d17ca8-6870-4749-a29b-5d6371378177)
 
 
 
