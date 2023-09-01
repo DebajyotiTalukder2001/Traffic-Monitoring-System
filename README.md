@@ -44,7 +44,7 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 <h2>Demo Video</h2>
 
-* Demo Video Link: [Click Here](https://drive.google.com/drive/folders/1Qm6-M0RzdAMCF-xNReqaWYUE-HjZ6Vrb)
+* Demo Video Link: [Click Here](https://drive.google.com/file/d/1pibNVjfgxzfX5xYqQ4UAhhIQe-CPZM9V/view?usp=sharing)
 
 <h2>Screenshots:</h2>
 
