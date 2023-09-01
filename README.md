@@ -48,7 +48,7 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 <h2>Screenshots:</h2>
 
-<h3>Sample1:</h3>
+<h3>Sample-1:</h3>
 
 ![Screenshot (1274)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/75a3a321-79f5-4ed7-87c5-5b1a45470298)
 
