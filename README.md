@@ -2,6 +2,7 @@
 
 
 <strong>Traffic Monitoring System using Python-OpenCV and YOLOv8:</strong><br>
+
 * This is my B.Tech. final year project on a Traffic Monitoring System using Python-OpenCV and YOLOv8.
 
 * Technically speaking, YOLOv8 is a group of convolutional neural network models created and trained using the PyTorch framework. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. YOLOv8 is the latest version of the YOLO (You Only Look Once) AI models developed by Ultralytics.
@@ -11,11 +12,15 @@ Leveraging the previous YOLO versions, the YOLOv8 model is faster and more accur
 Image Classification.
 
 <h2>Models Available in YOLOv8:</h2>
-There are five models in each category of YOLOv8 models for detection, segmentation, and classification. YOLOv8 Nano is the fastest and smallest, while YOLOv8 Extra Large (YOLOv8x) is the most accurate yet the slowest among them.
+
+There are five models in each category of YOLOv8 models for detection, segmentation, and classification. YOLOv8 Nano is the fastest and smallest, while YOLOv8 Extra Large (YOLOv8x) is the most accurate yet the slowest among them. 
+
 YOLOv8 comes bundled with the following pre-trained models:
 
 * Object Detection checkpoints trained on the COCO detection dataset with an image resolution of 640.
+
 * Instance segmentation checkpoints trained on the COCO segmentation dataset with an image resolution of 640.
+  
 * Image classification models pretrained on the ImageNet dataset with an image resolution of 224.
 
 <h3> ## I have used the YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project. ## </h3>
