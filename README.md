@@ -130,7 +130,9 @@ TestCase-4 : Can detect vehicle speed in one-direction at a time.
 ![Screenshot (1388)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/375cc7e4-8303-4741-bd03-836567eb6b5c)
 
 
-![Screenshot (1391)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/204a8f64-35c9-4a6d-be5e-6dae2c97f916)
+![Screenshot (1402)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a860214d-6ce0-455d-9423-dea029385847)
+
+
 
 
 
