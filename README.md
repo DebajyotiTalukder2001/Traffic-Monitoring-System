@@ -115,6 +115,30 @@ YOLOv8 comes bundled with the following pre-trained models:
 ![Screenshot (1377)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d2d17ca8-6870-4749-a29b-5d6371378177)
 
 
+<h3>Sample-4:</h3>
+<strong>
+
+TestCase-4 : Can detect vehicle speed in one-direction at a time. 
+
+**** But this is the most accurate one. We have used two regions of Interest and calculated the speed of vehicle most accurately.
+
+</strong>
+
+![Screenshot (1387)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b27170ca-23fc-4efa-9621-ee16a5079918)
+
+
+![Screenshot (1388)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/375cc7e4-8303-4741-bd03-836567eb6b5c)
+
+
+![Screenshot (1402)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a860214d-6ce0-455d-9423-dea029385847)
+
+
+
+
+
+
+
+
 
 
 
