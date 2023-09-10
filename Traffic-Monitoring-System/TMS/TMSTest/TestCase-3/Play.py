@@ -15,7 +15,7 @@ cv2.setMouseCallback('TMS', RGB)
 
 #read Video
 
-cap = cv2.VideoCapture('Videos/vid2.mp4')
+cap = cv2.VideoCapture('Videos/vid3.mp4')
 
 
 while True:

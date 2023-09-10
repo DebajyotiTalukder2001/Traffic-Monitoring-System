@@ -19,6 +19,7 @@ def RGB(event, x, y, flags, param):
 
 
 cv2.namedWindow('TMS')
+
 cv2.setMouseCallback('TMS', RGB)
 
 # read Video
@@ -30,21 +31,25 @@ data = my_file.read()
 class_list = data.split("\n")
 # print(class_list)
 
-
 count = 0
-
-speed = {}  # Initialize Dictionary
-
 
 # Co-ordinates of the desired region (Region of Interest or ROI).
 # above co-ordinates can vary according to the input video-footage or test cases.
 # So, we have to put proper co-ordinates using the mouse co-ordinate.
 
-area = [(116, 278), (1014, 278), (972, 386), (7, 386)]
+area = [(170, 219), (1018, 219), (970, 286), (110, 286)]
+area2 = [(85, 316), (1014, 316), (928, 392), (1, 392)]
+
 
 area_c = set()  # Initialize empty Set
-tracker = Tracker()  # Initialize the Tracker object.
-speed_limit = 60
+
+tracker = Tracker()  # Initialize the Tracker object. (Defined in the tracker file)
+
+# speed_limit = 60
+speed_limit = 70
+
+vehicles_entering = {}  # Initialize empty dictionary
+vehicles_elapsed_time = {}  # Initialize empty dictionary
 
 while True:
     ret, frame = cap.read()
@@ -112,10 +117,12 @@ while True:
         x3, y3, x4, y4, id = bbox
         cx = int(x3+x4)//2
         cy = int(y3+y4)//2
-        
+
         results = cv2.pointPolygonTest(
-                     np.array(area, np.int32), ((cx, cy)), False)
-        
+            np.array(area, np.int32), ((cx, cy)), False)   
+
+        results2 = cv2.pointPolygonTest(
+            np.array(area2, np.int32), ((cx, cy)), False) 
 
         # Detection will be done within the region only
         # This line checks if the center coordinates of the bounding box are inside the specified area.
@@ -124,63 +131,75 @@ while True:
         # 2. The ID of the object is displayed at the top-left corner of the bounding box.
         # 3. The bounding box is drawn in red.
         # 4. The ID of the object is added to the set area_c.
+        # when, the vehicle passes through the Two regions, the elapsed time will be calculated.
+
+
+        # Remember -- This method can detect vehicle speed in only one-direction at a time.
+
+        # Area-1
+        # rename it to results2 (if results2 >= 0) when considering backward direction of the vehicle.
 
         if results >= 0:
+
+            # use this to show bounding box to check if working properly, otherwise not necessary.
+            # cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+            # cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+            # cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+            #             0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+            Init_time = time.time()
+
+            if id not in vehicles_elapsed_time:
+                vehicles_entering[id] = Init_time
+            else:
+
+                Init_time = vehicles_entering[id]
+
+
+
+        # Area-2 | Main Area
+
+        # rename it to results (if results >= 0) when considering backward direction of the vehicle.
+
+        if results2 >= 0:
+            try:
+                elapsed_time = time.time() - vehicles_entering[id]
+            except KeyError:
+                pass
             cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
             cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
                         0.8, (0, 255, 255), 2, cv2.LINE_AA)
             cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
-            area_c.add(id)  # Object-counter
 
-            # Speed Calculation
-            # This line checks if the ID of the object is already in the dictionary speed.
-            # If it is not, then the current time is set as the speed of the object.
-            # Otherwise, the following steps are performed:
-            # 1. The previous time when the object was detected is obtained.
-            # 2. The current time is set as the speed of the object.
-            # 3. The distance between the current and previous positions of the object is calculated.
-            # 4. The speed of the object in kilometers per hour is calculated.
-            # 5. The speed of the object is displayed at the bottom-right corner of the bounding box.
+            area_c.add(id)  # Vehicle-counter
 
-            now = time.time()
-            if id not in speed:
-                speed[id] = now
+            if id not in vehicles_elapsed_time:
+                vehicles_elapsed_time[id] = elapsed_time
             else:
                 try:
-                    prev_time = speed[id]
-                    speed[id] = now
-                    dist = 5
-                    a_speed_ms = dist / (now - prev_time)
-                    a_speed_kh = a_speed_ms * 3.6
-                    cv2.putText(frame, str(int(a_speed_kh))+'Km/h', (x4, y4),
+                    #Speed -> distance/elapsed time
+
+                    elapsed_time = vehicles_elapsed_time[id]
+
+                    dist = 12 #Distance between two region
+                    
+                    speed_KH = (dist/elapsed_time)*3.6
+
+                    cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
                                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-                    speed[id] = now
+
+                #    cv2.putText(frame, str(elapsed_time), (x4, y4),
+                #                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
                 except ZeroDivisionError:
                     pass
 
-                # Check if the speed exceeds the speed limit
-                # This code checks if the speed of the object exceeds the speed limit.
-                # If it does, then a warning message is displayed on the frame for 3 seconds.
-                # The following steps are performed:
-                # 1. The speed of the object is checked against the speed limit.
-                # 2. If the speed exceeds the speed limit, then a warning message is displayed on the frame using the putText() function.
-                # 3. The warning message is displayed for 3 seconds. The while loop checks if the time elapsed is less than 3 seconds.
-                # If it is, then the warning message is displayed again. The loop breaks when the user presses the Esc key.
-
-                if a_speed_kh >= speed_limit:
-                    # Display a warning message 
-                    
-                    cv2.putText(frame, "Speed limit violated!", (440, 115),
+                if speed_KH >= speed_limit:
+                    # Display a warning message
+                    cv2.waitKey(300)
+                    cv2.putText(frame, "Speed limit violated!", (440, 112),
                                 cv2.FONT_HERSHEY_TRIPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-                    # Display the message for 2 seconds
-                    start_time = time.time()
-                    while time.time() - start_time < 2:
-                       cv2.imshow("TMS", frame)
-                       if cv2.waitKey(1) & 0xFF == 27:
-                             break
-                    
-                   
-                   
+                    cv2.waitKey(300)
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:
@@ -193,8 +212,10 @@ while True:
     # If the user presses the Esc key, then the loop breaks.
     # 6. The release() function releases the video capture object.
     # 7. The destroyAllWindows() function destroys all windows.
-    
-    cv2.polylines(frame, [np.array(area, np.int32)], True, (0, 255, 0), 2)
+
+    cv2.polylines(frame, [np.array(area, np.int32)], True, (0, 255, 0), 2) #Area-1
+    cv2.polylines(frame, [np.array(area2, np.int32)], True, (0, 255, 0), 2) #Area-2 | Main Area
+
     cnt = len(area_c)
     cv2.putText(frame, ('Vehicle-Count:-')+str(cnt), (452, 50),
                 cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)

@@ -46,13 +46,13 @@ class Tracker:
             #For each object in the dictionary, the code calculates the distance between the center point of the current object and the center point of the object in the dictionary.
             #If the distance is less than a threshold value (50), then the code concludes that the same object has been detected and the same_object_detected variable is set to True. 
             #The object's bounding box and ID are then appended to the objects_bbs_ids list.
-            #The Threshold value (50) can vary according to the input video-footage or test cases.
-
+            #The Threshold value can vary according to input video or test-cases.
+            
             same_object_detected = False
             for id, pt in self.center_points.items():
                 dist = math.hypot(cx - pt[0], cy - pt[1])
 
-                if dist < 50:
+                if dist < 80:
                     self.center_points[id] = (cx, cy)
 #                    print(self.center_points)
                     objects_bbs_ids.append([x, y, w, h, id])
@@ -90,3 +90,28 @@ class Tracker:
         return objects_bbs_ids
 
 # /////////////////////////////Tracker Module/////////////////////////////////////////////////////////////////////////////
+# /////////////////////////////Speed Detector Module/////////////////////////////////////////////////////////////////////////////
+import numpy as np
+
+class SpeedEstimator:
+    def __init__(self,posList,fps):
+        self.x=posList[0]
+        self.y=posList[1]
+        self.fps=fps
+        
+    def estimateSpeed(self):
+        # Distance / Time -> Speed
+        d_pixels=math.sqrt(self.x+self.y)
+
+        # ppm values can vary
+        # For example, the horizontal resolution of a camera is 1920x1080. 
+        # In other words, it shows the image that appears on the screen with 1920 pixels horizontally and 1080 pixels vertically. 
+        # If the horizontal width displayed on the screen is 192 meters when measured in meters, it is 1920 pixels/192 meters = 10 pixels/meter = 10PPM.
+        # In other words, 10 pixels correspond to 1 meter.
+        # ppm = 8
+        ppm = 18.2
+        d_meters=int(d_pixels*ppm)
+        speed=d_meters/self.fps*3.6
+        speedInKM=np.average(speed)
+        return int(speedInKM)
+# /////////////////////////////Speed Detector Module/////////////////////////////////////////////////////////////////////////////

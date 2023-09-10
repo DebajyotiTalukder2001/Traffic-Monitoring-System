@@ -23,7 +23,7 @@ cv2.setMouseCallback('TMS', RGB)
 
 # read Video
 
-cap = cv2.VideoCapture('Videos/vid2.mp4')
+cap = cv2.VideoCapture('Videos/vid3.mp4')
 
 my_file = open("coco.txt", "r")  # Class File
 data = my_file.read()
@@ -42,13 +42,15 @@ fps = 30  # Video FPS
 # above co-ordinates can vary according to the input video-footage or test cases.
 # So, we have to put proper co-ordinates using the mouse co-ordinate.
 
-area = [(116, 278), (1014, 278), (972, 386), (7, 386)]
+area = [(138, 329), (716, 329), (854, 441), (2, 441)]
 
 area_c = set()  # Initialize empty Set
 tracker = Tracker()  # Initialize the Tracker object. (Defined in tracker file)
 
 #speed_limit = 60
 speed_limit = 80
+
+
 
 while True:
     ret, frame = cap.read()
@@ -93,13 +95,11 @@ while True:
         c = class_list[d]
         if 'car' in c:
             list.append([x1, y1, x2, y2])
-        if 'motorcycle' in c:
+        elif 'motorcycle' in c:
             list.append([x1, y1, x2, y2])
         elif 'truck' in c:
             list.append([x1, y1, x2, y2])
-        elif 'bus' in c:
-            list.append([x1, y1, x2, y2])
-
+        
     # This line calls the update() method of the Tracker object.
     # The update() method takes a list of bounding boxes as input and returns a list of bounding boxes with the IDs of the tracked objects.
 
@@ -116,7 +116,6 @@ while True:
         x3, y3, x4, y4, id = bbox
         cx = int(x3+x4)//2
         cy = int(y3+y4)//2
-
         results = cv2.pointPolygonTest(
             np.array(area, np.int32), ((cx, cy)), False)
 
@@ -162,9 +161,10 @@ while True:
             if speed_KH >= speed_limit:
                 # Display a warning message
                 cv2.waitKey(300)
-                cv2.putText(frame, "Speed limit violated!", (440, 115),
-                            cv2.FONT_HERSHEY_TRIPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.putText(frame, "Speed limit violated!", (398,81),
+                                cv2.FONT_HERSHEY_TRIPLEX, 0.8, (255, 0, 255), 2, cv2.LINE_AA)
                 cv2.waitKey(300)
+                    
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:
@@ -181,7 +181,7 @@ while True:
     cv2.polylines(frame, [np.array(area, np.int32)], True, (0, 255, 0), 2)
     cnt = len(area_c)
     cv2.putText(frame, ('Vehicle-Count:-')+str(cnt), (452, 50),
-                cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.FONT_HERSHEY_TRIPLEX, 1, (102, 0, 255), 2, cv2.LINE_AA)
 
     cv2.imshow("TMS", frame)
     if cv2.waitKey(1) & 0xFF == 27:
