@@ -46,7 +46,7 @@ area_c = set()  # Initialize empty Set
 tracker = Tracker()  # Initialize the Tracker object. (Defined in the tracker file)
 
 # speed_limit = 60
-speed_limit = 80
+speed_limit = 120
 
 vehicles_entering = {}  # Initialize empty dictionary
 vehicles_elapsed_time = {}  # Initialize empty dictionary

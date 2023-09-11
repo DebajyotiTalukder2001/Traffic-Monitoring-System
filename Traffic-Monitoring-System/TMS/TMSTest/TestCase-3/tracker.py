@@ -101,7 +101,7 @@ class SpeedEstimator:
         
     def estimateSpeed(self):
         # Distance / Time -> Speed
-        d_pixels=math.sqrt(self.x+self.y)
+        d_pixels=math.sqrt(self.x**2 + self.y**2)
 
         # ppm values can vary
         # For example, the horizontal resolution of a camera is 1920x1080. 
@@ -109,7 +109,7 @@ class SpeedEstimator:
         # If the horizontal width displayed on the screen is 192 meters when measured in meters, it is 1920 pixels/192 meters = 10 pixels/meter = 10PPM.
         # In other words, 10 pixels correspond to 1 meter.
         # ppm = 8
-        ppm = 18.2
+        ppm = 18
         d_meters=int(d_pixels*ppm)
         speed=d_meters/self.fps*3.6
         speedInKM=np.average(speed)

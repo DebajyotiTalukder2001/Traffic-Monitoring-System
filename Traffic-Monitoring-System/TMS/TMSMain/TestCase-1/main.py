@@ -48,7 +48,10 @@ area_c = set()  # Initialize empty Set
 tracker = Tracker()  # Initialize the Tracker object. (Defined in tracker file)
 
 #speed_limit = 60 
-speed_limit = 80
+speed_limit = 120
+
+vehicles_entering_x = {} #Initialize Dictionary
+vehicles_entering_y = {} #Initialize Dictionary
 
 
 while True:
@@ -124,22 +127,57 @@ while True:
         # 3. The bounding box is drawn in red.
         # 4. The ID of the object is added to the set area_c.
 
+        # Speed Calculation (Defined in tracker file)
+        # 1. The distance between the current and previous positions of the object is calculated.
+        # 2. The speed of the object in kilometers per hour is calculated.
+        # 3. The speed of the object is displayed at the bottom-right corner of the bounding box.
+
+
         if results >= 0:
-            cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
-            cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
-                        0.8, (0, 255, 255), 2, cv2.LINE_AA)
-            cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
-            area_c.add(id)  # Vehicle-counter
 
-            # Speed Calculation (Defined in tracker file)
-            # 1. The distance between the current and previous positions of the object is calculated.
-            # 2. The speed of the object in kilometers per hour is calculated.
-            # 3. The speed of the object is displayed at the bottom-right corner of the bounding box.
+            #Measure vehicle speed using the distance obtained by considering change in the position of the vehicle (Change of the centroid position)
 
-            SpeedEstimatorTool = SpeedEstimator([cx, cy], fps)
-            speed_KH = SpeedEstimatorTool.estimateSpeed()
-            cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
-                        cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+            cx_prev = cx
+            cy_prev = cy
+
+            if id not in vehicles_entering_x:
+                vehicles_entering_x[id] = cx_prev
+            else:
+                cx_prev = vehicles_entering_x[id]
+
+            vehicles_entering_x[id] = cx
+
+            if id not in vehicles_entering_y:
+                vehicles_entering_y[id] = cy_prev
+            else:
+                cy_prev = vehicles_entering_y[id]
+
+            vehicles_entering_y[id] = cy
+
+            cx_n = abs(cx_prev - cx)
+            cy_n = abs(cy_prev - cy)
+
+            #When the vehicle is stopped, stop measuring vehicle speed
+            if(cx_n > 0) and (cy_n > 0):
+
+                cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+                            0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+                area_c.add(id)  # Vehicle-counter
+
+           
+
+                SpeedEstimatorTool = SpeedEstimator([cx_n, cy_n], fps)
+                speed_KH = SpeedEstimatorTool.estimateSpeed()
+                cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
+                            cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                
+
+            # cv2.putText(frame, str([cx_n, cy_n])+'', (x4, y4),
+            #             cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+
 
             # Check if the speed exceeds the speed limit
             # This code checks if the speed of the object exceeds the speed limit.
@@ -148,14 +186,19 @@ while True:
             # 1. The speed of the object is checked against the speed limit.
             # 2. If the vehicle speed exceeds the speed limit, then a warning message is displayed on the frame using the putText() function.
 
-            if speed_KH >= speed_limit:
-                # Display a warning message
-                cv2.waitKey(500)
-                cv2.putText(frame, "Speed limit violated!", (440, 115),
-                            cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
-                cv2.putText(frame, 'Detected', (cx,cy), cv2.FONT_HERSHEY_COMPLEX,
-                        0.8, (0, 255, 255), 2, cv2.LINE_AA)
-                cv2.waitKey(500)
+                if speed_KH >= speed_limit:
+                    # Display a warning message
+                    cv2.waitKey(500)
+                    cv2.putText(frame, "Speed limit violated!", (580, 106),
+                                cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                    cv2.putText(frame, 'Detected', (cx, cy),
+                                cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                    cv2.waitKey(500)
+            else:
+                cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+                            0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:
