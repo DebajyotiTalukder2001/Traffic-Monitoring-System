@@ -55,28 +55,16 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 <h3>Sample-1:</h3>
 
+![Screenshot (1404)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/e0119c7b-421b-4617-8c2b-e983d7919d54)
+
+
+
 ![Screenshot (1274)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/75a3a321-79f5-4ed7-87c5-5b1a45470298)
 
 
 
-![Screenshot (1279)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a23485c7-1b4e-4602-9176-fd62b7423dd3)
 
-
-![Screenshot (1272)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/2d36c456-c31f-4010-87d5-868417e2423b)
-
-
-
-![Screenshot (1281)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/339bf8bf-ba55-4b2c-be69-ad33ae803ea0)
-
-
-![Screenshot (1286)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/3ae60b16-f27d-4254-ac2d-dde17804e77b)
-
-
-![Screenshot (1287)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/ba7bc542-5786-46ce-bc36-70fba4b8918f)
-
-
-
-![Screenshot (1294)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b1b0c0da-b1af-4582-a9d1-21c26dd3aa42)
+![Screenshot (1407)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b95e5d2d-d1df-4bc1-9c0c-0db286d79067)
 
 
 
@@ -87,35 +75,27 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 
 
-![Screenshot (1356)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/68af63a8-d1ba-4e04-a223-60680a294e14)
-
-![Screenshot (1359)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/9d8d3bdd-5cff-43e3-9967-66af9ee3f7db)
+![Screenshot (1408)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/fcdd9d56-a672-46da-86ea-97255d72ff30)
 
 
-
-![Screenshot (1361)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/cc1fd1c9-8a84-4e8e-8c77-07fba9bec672)
-
-![Screenshot (1364)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/1dfb761e-7134-4b4c-bb14-2b63de91f016)
+![Screenshot (1410)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/368a7a3b-ec7d-457c-be47-1779459dcdc4)
 
 
 <h3>Sample-3:</h3>
 
-![Screenshot (1367)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b5809880-5d1a-4d2e-87d6-2bc4c0613677)
-
-![Screenshot (1368)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/9e474242-550a-43f6-b265-5b383e1b2e2c)
+![Screenshot (1412)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d697d330-262f-407c-b3bd-b691d87f5752)
 
 
 
-![Screenshot (1371)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/5c842562-044d-4808-a6a1-0736ee704766)
+![Screenshot (1416)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/3b111b58-6c47-450a-9ddf-4e6661bbcc86)
 
-![Screenshot (1373)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/62250e42-0f94-467c-a9c5-3d86a1ad28ee)
 
-![Screenshot (1374)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a7ebb184-0245-4c85-84b6-d879be158e47)
-
-![Screenshot (1377)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d2d17ca8-6870-4749-a29b-5d6371378177)
+![Screenshot (1418)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/60b03ff7-8fd0-4951-b828-2157ded6a102)
 
 
 <h3>Sample-4:</h3>
+
+
 <strong>
 
 TestCase-4 : Can detect vehicle speed in one-direction at a time. 
@@ -124,13 +104,41 @@ TestCase-4 : Can detect vehicle speed in one-direction at a time.
 
 </strong>
 
-![Screenshot (1387)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/b27170ca-23fc-4efa-9621-ee16a5079918)
+
+![Screenshot (1421)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/534c161f-42d1-469a-817e-a1318e1b17ec)
 
 
-![Screenshot (1388)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/375cc7e4-8303-4741-bd03-836567eb6b5c)
 
 
-![Screenshot (1402)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a860214d-6ce0-455d-9423-dea029385847)
+![Screenshot (1424)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d5277d3d-b28c-4d05-a214-92e94f5ce353)
+
+
+![Screenshot (1425)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/c14bc4bc-60fc-4492-93d6-3244b546592c)
+
+
+
+<h3>Sample-5:</h3>
+
+
+<strong>
+
+TestCase-5 : Can detect vehicle speed in one-direction at a time. 
+
+**** But this is the most accurate one. We have used two regions of Interest and calculated the speed of vehicle most accurately.
+
+</strong>
+
+
+![Screenshot (1426)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/c56c7882-93eb-491c-bc0e-a04785df7af8)
+
+
+![Screenshot (1427)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/081c155c-a1af-49da-a757-867b06b6a0d6)
+
+
+![Screenshot (1431)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/28eb8e22-a9a0-41a9-9b87-fd8c9e6b2ca0)
+
+
+
 
 
 
