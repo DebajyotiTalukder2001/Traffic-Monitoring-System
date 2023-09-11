@@ -33,9 +33,6 @@ class_list = data.split("\n")
 
 count = 0
 
-speed = {}  # Initialize Dictionary
-
-
 fps = 30  # Video FPS
 
 
@@ -189,7 +186,7 @@ while True:
                 if speed_KH >= speed_limit:
                     # Display a warning message
                     cv2.waitKey(500)
-                    cv2.putText(frame, "Speed limit violated!", (580, 106),
+                    cv2.putText(frame, "Speed limit violated!", (440,112),
                                 cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
                     cv2.putText(frame, 'Detected', (cx, cy),
                                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)

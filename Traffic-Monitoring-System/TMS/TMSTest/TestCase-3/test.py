@@ -33,7 +33,6 @@ class_list = data.split("\n")
 
 count = 0
 
-speed = {}  # Initialize Dictionary
 
 fps = 30  # Video FPS
 
