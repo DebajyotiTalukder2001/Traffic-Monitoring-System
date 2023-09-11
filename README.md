@@ -68,6 +68,11 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 
 
+
+![Screenshot (1432)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/2eb81b16-93bd-4b8d-89e1-0e5158a8eb15)
+
+
+
 <h3>Sample-2:</h3>
 
 
@@ -78,16 +83,18 @@ YOLOv8 comes bundled with the following pre-trained models:
 ![Screenshot (1408)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/fcdd9d56-a672-46da-86ea-97255d72ff30)
 
 
-![Screenshot (1410)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/368a7a3b-ec7d-457c-be47-1779459dcdc4)
+
+![Screenshot (1433)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/995bdb3c-a743-4396-a790-8ab120a48011)
+
 
 
 <h3>Sample-3:</h3>
 
+
+![Screenshot (1434)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/dc78ef6e-7dd1-4b58-a2c7-313f57897367)
+
+
 ![Screenshot (1412)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/d697d330-262f-407c-b3bd-b691d87f5752)
-
-
-
-![Screenshot (1416)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/3b111b58-6c47-450a-9ddf-4e6661bbcc86)
 
 
 ![Screenshot (1418)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/60b03ff7-8fd0-4951-b828-2157ded6a102)
@@ -105,7 +112,17 @@ TestCase-4 : Can detect vehicle speed in one-direction at a time.
 </strong>
 
 
-![Screenshot (1421)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/534c161f-42d1-469a-817e-a1318e1b17ec)
+
+![Screenshot (1435)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/bf84aeb6-b50e-491f-8597-1f0aee68f1e7)
+
+
+
+![Screenshot (1437)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/795ed621-d32c-47d4-9c98-b8f52885ac70)
+
+
+
+![Screenshot (1438)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/3b3d0a4d-30ba-495c-b6ea-009b3892838b)
+
 
 
 
