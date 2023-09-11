@@ -47,7 +47,7 @@ area = [(225, 335), (803, 335), (962, 408), (57, 408)]
 area_c = set()  # Initialize empty Set
 tracker = Tracker()  # Initialize the Tracker object. (Defined in tracker file)
 
-#speed_limit = 60
+#speed_limit = 60 
 speed_limit = 80
 
 
@@ -132,14 +132,9 @@ while True:
             area_c.add(id)  # Vehicle-counter
 
             # Speed Calculation (Defined in tracker file)
-            # This line checks if the ID of the object is already in the dictionary speed.
-            # If it is not, then the current time is set as the speed of the object.
-            # Otherwise, the following steps are performed:
-            # 1. The previous time when the object was detected is obtained.
-            # 2. The current time is set as the speed of the object.
-            # 3. The distance between the current and previous positions of the object is calculated.
-            # 4. The speed of the object in kilometers per hour is calculated.
-            # 5. The speed of the object is displayed at the bottom-right corner of the bounding box.
+            # 1. The distance between the current and previous positions of the object is calculated.
+            # 2. The speed of the object in kilometers per hour is calculated.
+            # 3. The speed of the object is displayed at the bottom-right corner of the bounding box.
 
             SpeedEstimatorTool = SpeedEstimator([cx, cy], fps)
             speed_KH = SpeedEstimatorTool.estimateSpeed()
@@ -148,19 +143,19 @@ while True:
 
             # Check if the speed exceeds the speed limit
             # This code checks if the speed of the object exceeds the speed limit.
-            # If it does, then a warning message is displayed on the frame for 3 seconds.
+            # If it does, then a warning message is displayed on the frame.
             # The following steps are performed:
             # 1. The speed of the object is checked against the speed limit.
-            # 2. If the speed exceeds the speed limit, then a warning message is displayed on the frame using the putText() function.
-            # 3. The warning message is displayed for 3 seconds. The while loop checks if the time elapsed is less than 3 seconds.
-            # If it is, then the warning message is displayed again. The loop breaks when the user presses the Esc key.
+            # 2. If the vehicle speed exceeds the speed limit, then a warning message is displayed on the frame using the putText() function.
 
             if speed_KH >= speed_limit:
                 # Display a warning message
-                cv2.waitKey(300)
+                cv2.waitKey(500)
                 cv2.putText(frame, "Speed limit violated!", (440, 115),
-                            cv2.FONT_HERSHEY_TRIPLEX, 0.8, (255, 0, 255), 2, cv2.LINE_AA)
-                cv2.waitKey(300)
+                            cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.putText(frame, 'Detected', (cx,cy), cv2.FONT_HERSHEY_COMPLEX,
+                        0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.waitKey(500)
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:

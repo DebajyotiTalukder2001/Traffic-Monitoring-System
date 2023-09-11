@@ -19,36 +19,37 @@ def RGB(event, x, y, flags, param):
 
 
 cv2.namedWindow('TMS')
+
 cv2.setMouseCallback('TMS', RGB)
 
 # read Video
 
-cap = cv2.VideoCapture('Videos/vid2.mp4')
+cap = cv2.VideoCapture('Videos/vid1.mp4')
 
 my_file = open("coco.txt", "r")  # Class File
 data = my_file.read()
 class_list = data.split("\n")
 # print(class_list)
 
-
 count = 0
-
-speed = {}  # Initialize Dictionary
-
-fps = 30  # Video FPS
-
 
 # Co-ordinates of the desired region (Region of Interest or ROI).
 # above co-ordinates can vary according to the input video-footage or test cases.
 # So, we have to put proper co-ordinates using the mouse co-ordinate.
 
-area = [(116, 278), (1014, 278), (972, 386), (7, 386)]
+area = [(314, 297), (742, 297), (805, 323), (248, 323)]
+area2 = [(171, 359), (890, 359), (1019, 422), (15, 422)]
+
 
 area_c = set()  # Initialize empty Set
-tracker = Tracker()  # Initialize the Tracker object. (Defined in tracker file)
 
-#speed_limit = 60
+tracker = Tracker()  # Initialize the Tracker object. (Defined in the tracker file)
+
+# speed_limit = 60
 speed_limit = 80
+
+vehicles_entering = {}  # Initialize empty dictionary
+vehicles_elapsed_time = {}  # Initialize empty dictionary
 
 while True:
     ret, frame = cap.read()
@@ -120,6 +121,9 @@ while True:
         results = cv2.pointPolygonTest(
             np.array(area, np.int32), ((cx, cy)), False)
 
+        results2 = cv2.pointPolygonTest(
+            np.array(area2, np.int32), ((cx, cy)), False)
+
         # Detection will be done within the region only
         # This line checks if the center coordinates of the bounding box are inside the specified area.
         # If they are, then the following steps are performed:
@@ -127,40 +131,87 @@ while True:
         # 2. The ID of the object is displayed at the top-left corner of the bounding box.
         # 3. The bounding box is drawn in red.
         # 4. The ID of the object is added to the set area_c.
+        # when, the vehicle passes through the Two regions, the elapsed time will be calculated.
+
+        # Remember -- This method can detect vehicle speed in only one-direction at a time.
+
+        # Area-1
+        # rename it to results2 (if results2 >= 0) when considering vehicles moving to backward/another direction.
 
         if results >= 0:
-            cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
-            cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+
+            # use this to show bounding box to check if working properly, otherwise not necessary.
+            # cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+            # cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+            # cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+            #             0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+            Init_time = time.time()
+
+            if id not in vehicles_entering:
+                vehicles_entering[id] = Init_time
+            else:
+
+                Init_time = vehicles_entering[id]
+
+        # Area-2 | Main Area
+
+        # rename it to results (if results >= 0) when considering vehicles moving to backward/another direction.
+
+        if results2 >= 0:
+                # Ensure not showing speed for vehicles moving in another direction.
+                if id not in vehicles_entering:
+                     cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                     cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
                         0.8, (0, 255, 255), 2, cv2.LINE_AA)
-            cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
-            area_c.add(id)  # Vehicle-counter
+                     area_c.add(id)  # Vehicle-counter
+                     cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+                else:
+                     try:
 
-            # Speed Calculation (Defined in tracker file)
-            # 1. The distance between the current and previous positions of the object is calculated.
-            # 2. The speed of the object in kilometers per hour is calculated.
-            # 3. The speed of the object is displayed at the bottom-right corner of the bounding box.
+                       elapsed_time = time.time() - vehicles_entering[id]
 
-            SpeedEstimatorTool = SpeedEstimator([cx, cy], fps)
-            speed_KH = SpeedEstimatorTool.estimateSpeed()
-            cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
-                        cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                     except KeyError:
+                        pass
+                     cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                     cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+                              0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                     cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
 
-            # Check if the speed exceeds the speed limit
-            # This code checks if the speed of the object exceeds the speed limit.
-            # If it does, then a warning message is displayed on the frame.
-            # The following steps are performed:
-            # 1. The speed of the object is checked against the speed limit.
-            # 2. If the vehicle speed exceeds the speed limit, then a warning message is displayed on the frame using the putText() function.
+                     area_c.add(id)  # Vehicle-counter
+
+                     if id not in vehicles_elapsed_time:
+                         vehicles_elapsed_time[id] = elapsed_time
+                     else:
+                       try:
+                          # Speed -> distance/elapsed time
+
+                         elapsed_time = vehicles_elapsed_time[id]
+
+                         dist = 60 #Distance between two region
+                    
+                         speed_KH = (dist/elapsed_time)*3.6
+
+                         cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
+                                  cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+                         #    cv2.putText(frame, str(elapsed_time), (x4, y4),
+                         #                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+                       except ZeroDivisionError:
+                            pass
+
+                       if speed_KH >= speed_limit:
+                          # Display a warning message
+                          cv2.waitKey(500)
+                          cv2.putText(frame, "Speed limit violated!", (440, 112),
+                                cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                          cv2.putText(frame, 'Detected', (cx, cy),
+                                  cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                          cv2.waitKey(500)
+                     
+                     
            
-
-            if speed_KH >= speed_limit:
-                # Display a warning message
-                cv2.waitKey(500)
-                cv2.putText(frame, "Speed limit violated!", (440, 115),
-                            cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
-                cv2.putText(frame,'Detected', (cx, cy),
-                        cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-                cv2.waitKey(500)
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:
@@ -174,10 +225,12 @@ while True:
     # 6. The release() function releases the video capture object.
     # 7. The destroyAllWindows() function destroys all windows.
 
-    cv2.polylines(frame, [np.array(area, np.int32)], True, (0, 255, 0), 2)
+    cv2.polylines(frame, [np.array(area, np.int32)], True, (0, 255, 0), 2) #Area-1
+    cv2.polylines(frame, [np.array(area2, np.int32)], True, (0, 255, 0), 2) #Area-2 | Main Area
+
     cnt = len(area_c)
     cv2.putText(frame, ('Vehicle-Count:-')+str(cnt), (452, 50),
-                cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.FONT_HERSHEY_TRIPLEX, 1, (102, 0, 255), 2, cv2.LINE_AA)
 
     cv2.imshow("TMS", frame)
     if cv2.waitKey(1) & 0xFF == 27:

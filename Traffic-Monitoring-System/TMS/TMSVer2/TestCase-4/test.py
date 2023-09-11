@@ -37,8 +37,8 @@ count = 0
 # above co-ordinates can vary according to the input video-footage or test cases.
 # So, we have to put proper co-ordinates using the mouse co-ordinate.
 
-area = [(170, 219), (1018, 219), (970, 286), (110, 286)]
-area2 = [(85, 316), (1014, 316), (928, 392), (1, 392)]
+area = [(170, 219), (1018, 219), (1003, 286), (110, 286)]
+area2 = [(85, 316), (1014, 316), (978, 392), (1, 392)]
 
 
 area_c = set()  # Initialize empty Set
@@ -149,7 +149,7 @@ while True:
 
             Init_time = time.time()
 
-            if id not in vehicles_elapsed_time:
+            if id not in vehicles_entering:
                 vehicles_entering[id] = Init_time
             else:
 
@@ -181,7 +181,7 @@ while True:
 
                     elapsed_time = vehicles_elapsed_time[id]
 
-                    dist = 12 #Distance between two region
+                    dist = 25 #Distance between two region
                     
                     speed_KH = (dist/elapsed_time)*3.6
 
@@ -196,10 +196,12 @@ while True:
 
                 if speed_KH >= speed_limit:
                     # Display a warning message
-                    cv2.waitKey(300)
+                    cv2.waitKey(500)
                     cv2.putText(frame, "Speed limit violated!", (440, 112),
-                                cv2.FONT_HERSHEY_TRIPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-                    cv2.waitKey(300)
+                                cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                    cv2.putText(frame,'Detected', (cx, cy),
+                        cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                    cv2.waitKey(500)
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:
