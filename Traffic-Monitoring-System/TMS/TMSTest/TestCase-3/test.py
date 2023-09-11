@@ -154,7 +154,7 @@ while True:
             if speed_KH >= speed_limit:
                 # Display a warning message
                 cv2.waitKey(500)
-                cv2.putText(frame, "Speed limit violated!", (385,86),
+                cv2.putText(frame, "Speed limit violated!", (315,90),
                                 cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 0, 255), 2, cv2.LINE_AA)
                 cv2.putText(frame,'Detected', (cx,cy),
                         cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
@@ -179,6 +179,7 @@ while True:
                 cv2.FONT_HERSHEY_TRIPLEX, 1, (102, 0, 255), 2, cv2.LINE_AA)
 
     cv2.imshow("TMS", frame)
+     #put 0 to freeze the frame
     if cv2.waitKey(1) & 0xFF == 27:
         break
 cap.release()
