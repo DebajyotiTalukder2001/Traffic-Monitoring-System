@@ -1,9 +1,9 @@
-import math
-
 # /////////////////////////////Tracker Module/////////////////////////////////////////////////////////////////////////////\
 
 #Centroid Tracking algorithm
 #Eucledian Distance Tracker
+
+import math
 
 
 class Tracker:
@@ -46,13 +46,13 @@ class Tracker:
             #For each object in the dictionary, the code calculates the distance between the center point of the current object and the center point of the object in the dictionary.
             #If the distance is less than a threshold value (50), then the code concludes that the same object has been detected and the same_object_detected variable is set to True. 
             #The object's bounding box and ID are then appended to the objects_bbs_ids list.
-            #The Threshold value (50) can vary according to the input video-footage or test cases.
-
+            #The Threshold value can vary according to input video or test-cases.
+            
             same_object_detected = False
             for id, pt in self.center_points.items():
                 dist = math.hypot(cx - pt[0], cy - pt[1])
 
-                if dist < 85:
+                if dist < 70:
                     self.center_points[id] = (cx, cy)
 #                    print(self.center_points)
                     objects_bbs_ids.append([x, y, w, h, id])
@@ -90,4 +90,3 @@ class Tracker:
         return objects_bbs_ids
 
 # /////////////////////////////Tracker Module/////////////////////////////////////////////////////////////////////////////
-

@@ -50,6 +50,8 @@ speed_limit = 120
 
 vehicles_entering = {}  # Initialize empty dictionary
 vehicles_elapsed_time = {}  # Initialize empty dictionary
+vehicles_entering_backward = {}  # Initialize empty dictionary
+
 
 while True:
     ret, frame = cap.read()
@@ -123,7 +125,7 @@ while True:
 
         results2 = cv2.pointPolygonTest(
             np.array(area2, np.int32), ((cx, cy)), False) 
-
+        
         # Detection will be done within the region only
         # This line checks if the center coordinates of the bounding box are inside the specified area.
         # If they are, then the following steps are performed:
@@ -133,75 +135,142 @@ while True:
         # 4. The ID of the object is added to the set area_c.
         # when, the vehicle passes through the Two regions, the elapsed time will be calculated.
 
-
         # Remember -- This method can detect vehicle speed in only one-direction at a time.
 
         # Area-1
-        # rename it to results2 (if results2 >= 0) when considering backward direction of the vehicle.
 
         if results >= 0:
+                
+            #Uncomment the below parts if the video contains vehicles coming from both direction
 
-            # use this to show bounding box to check if working properly, otherwise not necessary.
-            # cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
-            # cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
-            # cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
-            #             0.8, (0, 255, 255), 2, cv2.LINE_AA)
+            # # if the vehicle is not coming from backward direction i.e. forward vehicles
+            # if id not in vehicles_entering_backward:
+                cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+                     0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                
+                cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
 
-            Init_time = time.time()
+                Init_time = time.time()
 
-            if id not in vehicles_entering:
-                vehicles_entering[id] = Init_time
-            else:
+                if id not in vehicles_entering:
+                    vehicles_entering[id] = Init_time
+                else:
 
-                Init_time = vehicles_entering[id]
+                    Init_time = vehicles_entering[id]
 
+            # # if the vehicle is coming from forward direction
+            # else:
+            #     try:
 
+            #         elapsed_time = time.time() - vehicles_entering_backward[id]
+
+            #     except KeyError:
+            #             pass
+            #     cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+            #     cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+            #                     0.8, (0, 255, 255), 2, cv2.LINE_AA)
+            #     cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+
+                    
+
+            #     if id not in vehicles_elapsed_time:
+            #                 vehicles_elapsed_time[id] = elapsed_time
+            #     else:
+            #             try:
+            #                    # Speed -> distance/elapsed time
+
+            #                     elapsed_time = vehicles_elapsed_time[id]
+
+            #                     dist = 25  # Distance between two region
+
+            #                     speed_KH = (dist/elapsed_time)*3.6
+
+            #                     cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
+            #                                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+            #                     #    cv2.putText(frame, str(elapsed_time), (x4, y4),
+            #                     #                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+            #             except ZeroDivisionError:
+            #                     pass
+
+            #             if speed_KH >= speed_limit:
+            #                    # Display a warning message
+            #                     cv2.waitKey(500)
+            #                     cv2.putText(frame, "Speed limit violated!", (440, 112),
+            #                                 cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+            #                     cv2.putText(frame, 'Detected', (cx, cy),
+            #                                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+            #                     cv2.waitKey(500)
 
         # Area-2 | Main Area
 
-        # rename it to results (if results >= 0) when considering backward direction of the vehicle.
 
         if results2 >= 0:
-            try:
-                elapsed_time = time.time() - vehicles_entering[id]
-            except KeyError:
-                pass
-            cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
-            cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
-                        0.8, (0, 255, 255), 2, cv2.LINE_AA)
-            cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+            
+             #Uncomment the below parts if the video contains vehicles coming from both direction
 
-            area_c.add(id)  # Vehicle-counter
+             # if the vehicle is not coming from forward direction i.e. backward vehicles
+            if id not in vehicles_entering:
+                cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+                     0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                area_c.add(id)  # Vehicle-counter
+                cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
+                # Init_time = time.time()
 
-            if id not in vehicles_elapsed_time:
-                vehicles_elapsed_time[id] = elapsed_time
+                # if id not in vehicles_entering_backward:
+                #     vehicles_entering_backward[id] = Init_time
+                # else:
+
+                #     Init_time = vehicles_entering_backward[id]
+
+             # if the vehicle is coming from forward direction
             else:
                 try:
-                    #Speed -> distance/elapsed time
 
-                    elapsed_time = vehicles_elapsed_time[id]
+                    elapsed_time = time.time() - vehicles_entering[id]
 
-                    dist = 25 #Distance between two region
-                    
-                    speed_KH = (dist/elapsed_time)*3.6
-
-                    cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
-                                cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-
-                #    cv2.putText(frame, str(elapsed_time), (x4, y4),
-                #                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-
-                except ZeroDivisionError:
+                except KeyError:
                     pass
+                cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
+                            0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 0, 255), 2)
 
-                if speed_KH >= speed_limit:
-                    # Display a warning message
-                    cv2.waitKey(500)
-                    cv2.putText(frame, "Speed limit violated!", (580, 106),
-                                cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
-                    cv2.putText(frame,'Detected', (cx, cy),
-                        cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
-                    cv2.waitKey(500)
+                area_c.add(id)  # Vehicle-counter
+
+                if id not in vehicles_elapsed_time:
+                    vehicles_elapsed_time[id] = elapsed_time
+                else:
+                    try:
+                             # Speed -> distance/elapsed time
+
+                        elapsed_time = vehicles_elapsed_time[id]
+
+                        dist = 25  # Distance between two region
+
+                        speed_KH = (dist/elapsed_time)*3.6
+
+                        cv2.putText(frame, str(int(speed_KH))+'Km/h', (x4, y4),
+                                    cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+                        #    cv2.putText(frame, str(elapsed_time), (x4, y4),
+                        #                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+
+                    except ZeroDivisionError:
+                        pass
+
+                    if speed_KH >= speed_limit:
+                             # Display a warning message
+                        cv2.waitKey(500)
+                        cv2.putText(frame, "Speed limit violated!", (580, 106),
+                                    cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 255, 255), 2, cv2.LINE_AA)
+                        cv2.putText(frame, 'Detected', (cx, cy),
+                                    cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
+                        cv2.waitKey(500)
+
 
     # This code draws the specified area on the frame, displays the number of vehicles in the area, and releases the video capture object and destroys all windows.
     # The following steps are performed:
