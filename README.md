@@ -36,16 +36,6 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 * Libraries: Pandas (1.5.3), NumPy (1.24.3), Python-OpenCV (1.24.3) & Ultralytics (8.0.147).
 
-<h2>This system have the following features:</h2>
-
-•	Real-time Vehicle Detection and Counting.
-
-•	Vehicle Tracking.
-
-•	Vehicle Speed Detection.
-
-•	Vehicle Speed Violation Detection.
-
 <h2>Documentation:</h2>
 
 * Documentation Link: [Click Here](https://drive.google.com/drive/folders/1o_dnP3Hs1WSbIQcwozzGhLoHEcJdLK1r)
