@@ -26,7 +26,7 @@ YOLOv8 comes bundled with the following pre-trained models:
   
 * Image classification models pretrained on the ImageNet dataset with an image resolution of 224.
 
-<h3> *** I have used the YOLOv8’s pre-trained model, i.e., yolov8n.pt, in my project.</h3>
+<h3> *** I have used the YOLOv8’s pre-trained model, i.e., yolov8s.pt, in my project.</h3>
 
 <h2>Technologies:</h2>
 
@@ -58,7 +58,8 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 
 
-![Screenshot (15412)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/7835c377-bf73-4d03-8765-7fd8db33b1cb)
+![1](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/3151a5f0-45a2-4355-bd19-ff2e6fb4660b)
+
 
 
 ![Screenshot (1511)](https://github.com/DebajyotiTalukder2001/Traffic-Monitoring-System/assets/136104351/a4232869-0362-44e6-b584-c603b44c46c2)
