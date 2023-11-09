@@ -32,9 +32,9 @@ YOLOv8 comes bundled with the following pre-trained models:
 
 *	Programming Language: Python (Version-3.11).
 
-*	Platform: Anaconda (Python Distribution) and Visual Studio Code IDE.
+*	Platform: Visual Studio Code IDE.
 
-* Libraries: Pandas (1.5.3), NumPy (1.24.3), Python-OpenCV (1.24.3) & Ultralytics (8.0.147).
+*   Libraries: Pandas (1.5.3), NumPy (1.24.3), Python-OpenCV (1.24.3) & Ultralytics (8.0.147).
 
 <h2>Documentation:</h2>
 
