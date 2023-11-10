@@ -1,5 +1,3 @@
-# pip install ultralytics --target=D:\System\Conda\Lib\site-packages
-
 import cv2
 import pandas as pd
 import numpy as np
