@@ -12,7 +12,14 @@ Technically speaking, YOLOv8 is a group of convolutional neural network models c
 
 YOLOv8 is the latest family of YOLO based Object Detection models from Ultralytics providing state-of-the-art performance.
 Leveraging the previous YOLO versions, the YOLOv8 model is faster and more accurate while providing a unified framework for training models for performing Object Detection, Instance Segmentation, and
-Image Classification.
+Image Classification. YOLOv8 is more efficient than previous versions because it uses a larger feature map and a more efficient convolutional network.
+
+This system can efficiently detect, track, and count vehicles moving in either direction and estimate the speed of the vehicles. It canalso detect vehicle speed limit violations to ensure road traffic
+safety. I have Used the centroid tracking algorithm to track the vehicles. The centroid tracking algorithm works by tracking the centroids of the vehicles detected by YOLOv8.
+
+The system was evaluated on the YOLOv8’s pretrained model (e.g., yolov8s.pt). All YOLOv8 models for object detection are already pre-trained on the COCO dataset, which is a huge collection of
+images of 80 different types. It was Tested on different videos, and average accuracy achieved by the system is up to 95%.
+
 
 <h2>Models Available in YOLOv8:</h2>
 
