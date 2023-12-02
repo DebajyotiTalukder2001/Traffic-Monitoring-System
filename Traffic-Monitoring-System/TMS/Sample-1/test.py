@@ -67,7 +67,8 @@ while True:
     results = model.predict(frame)
 
     # print(results)
-
+    
+    # a = results[0].xyxy[0] 
     a = results[0].boxes.boxes
 
     px = pd.DataFrame(a).astype("float")
