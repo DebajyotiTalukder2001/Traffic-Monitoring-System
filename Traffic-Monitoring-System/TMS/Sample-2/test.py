@@ -70,6 +70,7 @@ while True:
     # print(results)
     
     # a = results[0].xyxy[0] 
+
     a = results[0].boxes.boxes
 
     px = pd.DataFrame(a).astype("float")
@@ -134,15 +135,15 @@ while True:
         # 4. The ID of the object is added to the set area_c.
         # when, the vehicle passes through the Two regions, the elapsed time will be calculated.
 
-        # Remember -- This method can detect vehicle speed in only one-direction at a time.
+       
 
-        # Area-1
+        # Area-1 (forward moving vehicles enter here first)
 
         if results >= 0:
                 
             #Uncomment the below parts if the video contains vehicles coming from both direction
 
-            # # if the vehicle is not coming from backward direction i.e. forward vehicles
+            # # forward vehicles
             # if id not in vehicles_entering_backward:
                 cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
                 cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
@@ -158,7 +159,7 @@ while True:
 
                     Init_time = vehicles_entering[id]
 
-            # # if the vehicle is coming from forward direction
+            # # backward vehicles
             # else:
             #     try:
 
@@ -203,14 +204,14 @@ while True:
             #                                 cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 255, 255), 2, cv2.LINE_AA)
             #                     cv2.waitKey(500)
 
-        # Area-2 | Main Area
+        # Area-2 | Main Area (backward moving vehicles enter here first)
 
 
         if results2 >= 0:
             
              #Uncomment the below parts if the video contains vehicles coming from both direction
 
-             # if the vehicle is not coming from forward direction i.e. backward vehicles
+             # # backward vehicles
             if id not in vehicles_entering:
                 cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
                 cv2.putText(frame, str(id), (x3, y3), cv2.FONT_HERSHEY_COMPLEX,
@@ -225,7 +226,7 @@ while True:
 
                 #     Init_time = vehicles_entering_backward[id]
 
-             # if the vehicle is coming from forward direction
+             # # forward vehicles
             else:
                 try:
 
