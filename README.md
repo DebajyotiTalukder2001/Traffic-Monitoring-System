@@ -1,23 +1,19 @@
 <h1>Traffic-Monitoring-System</h1>
 
 
-<strong>Traffic Monitoring System using Python-OpenCV and YOLOv8:</strong><br>
+* Developed a system that effectively detects, tracks, and counts vehicles, estimates their speeds, and identifies speed limit violations with 95% accuracy, promoting proactive traffic management and safety.
+* Achieved robust performance across diverse video datasets by effectively integrating YOLOv8's state-of-the-art pretrained model and implementing a centroid tracking algorithm, ensuring adaptability to real-world traffic scenarios.
 
-It is a Traffic Monitoring System using Python-OpenCV and YOLOv8 which will be able to:
-* Detect, track, and count vehicles.
-* Detect vehicle speed.
-* Detect vehicle speed limit violations.
+* Technically speaking, YOLOv8 is a group of convolutional neural network models created and trained using the PyTorch framework. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. YOLOv8 is the latest version of the YOLO (You Only Look Once) AI models developed by Ultralytics.
 
-Technically speaking, YOLOv8 is a group of convolutional neural network models created and trained using the PyTorch framework. YOLO (You Only Look Once) is one of the most popular object detection algorithms in the fields of Deep Learning, Machine Learning, and Computer Vision. YOLOv8 is the latest version of the YOLO (You Only Look Once) AI models developed by Ultralytics.
-
-YOLOv8 is the latest family of YOLO based Object Detection models from Ultralytics providing state-of-the-art performance.
+* YOLOv8 is the latest family of YOLO based Object Detection models from Ultralytics providing state-of-the-art performance.
 Leveraging the previous YOLO versions, the YOLOv8 model is faster and more accurate while providing a unified framework for training models for performing Object Detection, Instance Segmentation, and
 Image Classification. YOLOv8 is more efficient than previous versions because it uses a larger feature map and a more efficient convolutional network.
 
-This system can efficiently detect, track, and count vehicles moving in either direction and estimate the speed of the vehicles. It can also detect vehicle speed limit violations to ensure road traffic
+* This system can efficiently detect, track, and count vehicles moving in either direction and estimate the speed of the vehicles. It can also detect vehicle speed limit violations to ensure road traffic
 safety. I have Used the centroid tracking algorithm to track the vehicles. The centroid tracking algorithm works by tracking the centroids of the vehicles detected by YOLOv8.
 
-The system was evaluated on the YOLOv8’s pretrained model (e.g., yolov8s.pt). All YOLOv8 models for object detection are already pre-trained on the COCO dataset, which is a huge collection of
+* The system was evaluated on the YOLOv8’s pretrained model (e.g., yolov8s.pt). All YOLOv8 models for object detection are already pre-trained on the COCO dataset, which is a huge collection of
 images of 80 different types. It was Tested on different videos, and average accuracy achieved by the system is up to 95%.
 
 
@@ -34,6 +30,9 @@ YOLOv8 comes bundled with the following pre-trained models:
 * Image classification models pretrained on the ImageNet dataset with an image resolution of 224.
 
 <h3> *** I have used the YOLOv8’s pre-trained model, i.e., yolov8s.pt, in my project.</h3>
+
+* <strong>YOLOv8 Object Detection Tutorial: [Click Here](https://www.freecodecamp.org/news/how-to-detect-objects-in-images-using-yolov8/)</strong>
+* <strong>Centroid-Tracking-Algorithm Tutorial: [Click Here](https://www.analyticsvidhya.com/blog/2022/05/a-tutorial-on-centroid-tracker-counter-system/)</strong>
 
 <h2>Technologies:</h2>
 
