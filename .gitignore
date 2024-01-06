@@ -1,4 +1,5 @@
-Traffic-Monitoring-System/TMS/Sample-1/Videos/
-Traffic-Monitoring-System/TMS/Sample-2/Videos/
-Traffic-Monitoring-System/TMS/Sample-3/Videos/
+# Traffic-Monitoring-System/TMS/Sample-1/Videos/
+# Traffic-Monitoring-System/TMS/Sample-2/Videos/
+# Traffic-Monitoring-System/TMS/Sample-3/Videos/
 *.pt
+*.mp4
